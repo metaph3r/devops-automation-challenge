@@ -36,6 +36,11 @@ resource "azurerm_kubernetes_cluster" "kubernetes" {
   resource_group_name = azurerm_resource_group.silvio-1.name
   dns_prefix          = "kubernetes"
 
+  network_profile {
+    network_plugin = "kubenet"
+    dns_service_ip = "10.0.0.10"
+  }
+
   default_node_pool {
     name       = "default"
     node_count = 2
