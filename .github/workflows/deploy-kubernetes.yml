@@ -8,17 +8,18 @@ on:
 jobs:
   deploy_kubernetes:
     runs-on: ubuntu-latest
+    env:
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+      ARM_CLIENT_CERTIFICATE_PATH: ./azure/cert.p12
+      ARM_CLIENT_CERTIFICATE_PASSWORD: ${{ secrets.ARM_CLIENT_CERTIFICATE_PASSWORD }}
     defaults:
       run:
         working-directory: ./azure
     steps:
       - uses: actions/checkout@v2
       - uses: hashicorp/setup-terraform@v1
-
-      - name: az login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: terraform format
         id: format
