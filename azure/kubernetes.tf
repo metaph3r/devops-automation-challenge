@@ -6,6 +6,13 @@ terraform {
     }
   }
 
+  backend "azurerm" {
+    resource_group_name  = "Silvio001"
+    storage_account_name = "devopschallenge"
+    container_name       = "tfstatefile"
+    key                  = "prod.terraform.tfstate"
+  }
+
   required_version = ">= 1.0.11"
 }
 
