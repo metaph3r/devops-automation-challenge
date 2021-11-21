@@ -17,17 +17,11 @@ provider "azurerm" {
 resource "azurerm_resource_group" "silvio-1" {
   name     = "Silvio001"
   location = "germanywestcentral"
-  tags = {
-    "author" = "kevinsandermann"
-  }
 }
 
 resource "azurerm_resource_group" "silvio-2" {
   name     = "Silvio002"
   location = "germanywestcentral"
-  tags = {
-    "author" = "kevinsandermann"
-  }
 }
 
 resource "azurerm_kubernetes_cluster" "kubernetes" {
