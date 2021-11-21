@@ -12,7 +12,7 @@ jobs:
       ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
       ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
       ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
-      ARM_CLIENT_CERTIFICATE_PATH: ./azure/cert.p12
+      ARM_CLIENT_CERTIFICATE_PATH: cert.p12
       ARM_CLIENT_CERTIFICATE_PASSWORD: ${{ secrets.ARM_CLIENT_CERTIFICATE_PASSWORD }}
     defaults:
       run:
