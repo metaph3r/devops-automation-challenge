@@ -21,20 +21,10 @@ provider "azurerm" {
   skip_provider_registration = true
 }
 
-resource "azurerm_resource_group" "silvio-1" {
-  name     = "Silvio001"
-  location = "germanywestcentral"
-}
-
-resource "azurerm_resource_group" "silvio-2" {
-  name     = "Silvio002"
-  location = "germanywestcentral"
-}
-
 resource "azurerm_kubernetes_cluster" "kubernetes" {
   name                = "kubernetes-1"
-  location            = azurerm_resource_group.silvio-1.location
-  resource_group_name = azurerm_resource_group.silvio-1.name
+  location            = "germanywestcentral"
+  resource_group_name = "Silvio001"
   dns_prefix          = "kubernetes"
 
   network_profile {
