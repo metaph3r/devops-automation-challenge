@@ -1,2 +1,2 @@
 @ECHO OFF
-az aks show --resource-group Silvio001 --name kubernetes-1 --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName -o table
+az aks show --resource-group Silvio002 --name kubernetes-2 --query addonProfiles.httpApplicationRouting.config.HTTPApplicationRoutingZoneName -o table

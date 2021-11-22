@@ -24,3 +24,11 @@ To get the credential for kubectl run:
 **az aks get-credentials --resource-group Silvio001 --name kubernetes-1**
 
 There is also a script called **get-credentials.bat** in place for convenience.
+
+GitHub Secrets
+--------------
+
+* ARM_CLIENT_ID
+* ARM_SUBSCRIPTION_ID
+* ARM_CLIENT_CERTIFICATE_PATH
+* ARM_CLIENT_CERTIFICATE_PASSWORD
