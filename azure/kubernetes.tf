@@ -48,3 +48,31 @@ resource "azurerm_kubernetes_cluster" "kubernetes" {
     type = "SystemAssigned"
   }
 }
+
+resource "azurerm_kubernetes_cluster" "kubernetes2" {
+  name                = "kubernetes-2"
+  location            = "germanywestcentral"
+  resource_group_name = "Silvio002"
+  dns_prefix          = "kubernetes"
+
+  network_profile {
+    network_plugin = "kubenet"
+    dns_service_ip = "10.0.0.10"
+  }
+
+  addon_profile {
+    http_application_routing {
+      enabled = true
+    }
+  }
+
+  default_node_pool {
+    name       = "default"
+    node_count = 2
+    vm_size    = "Standard_D2_v2"
+  }
+
+  identity {
+    type = "SystemAssigned"
+  }
+}
