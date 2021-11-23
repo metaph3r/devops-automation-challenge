@@ -29,7 +29,6 @@ resource "azurerm_kubernetes_cluster" "kubernetes" {
 
   network_profile {
     network_plugin = "kubenet"
-    dns_service_ip = "10.0.0.10"
   }
 
   addon_profile {
